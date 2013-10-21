@@ -1,3 +1,12 @@
+A test bed for exploring a new interface and design for the HIM Web UI that will address some of the administrative needs of the tool.
+
+Some key features that this interface will need to address:
+- List and Display active 'channels' on the HIM
+- List and administer all 'system' users of the HIM (i.e. applications that have access to the HIM channels)
+- List and display the 'monitoring aspects' of the HIM:
+-- Number of messages per channel etc
+
+
 Bootstrap Admin Theme [![Build Status](https://travis-ci.org/VinceG/Bootstrap-Admin-Theme.png?branch=master)](https://travis-ci.org/VinceG/Bootstrap-Admin-Theme)
 =====================
 
