@@ -28,9 +28,6 @@ Existing Pages to be used for referecne:
 The Working demo page:
 http://carlsbox.github.io/HIM-Admin-Theme-bootstrap/
 
-The original demo page:
-http://carlsbox.github.io/HIM-Admin-Theme-bootstrap/index_original.html
-
 
 License
 ===============
