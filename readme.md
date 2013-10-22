@@ -1,11 +1,19 @@
-Bootstrap Admin Theme [![Build Status](https://travis-ci.org/VinceG/Bootstrap-Admin-Theme.png?branch=master)](https://travis-ci.org/VinceG/Bootstrap-Admin-Theme)
-=====================
+OpenHIM Web-UI Admin Theme 
+==========================
 
-A generic admin theme built with Bootstrap free for both personal and commercial use. 
+A test bed for exploring a new interface and design for the HIM Web UI that will address some of the administrative needs of the tool.
 
-This is still a work in progress.
+Some key features that this interface will need to address:
+- List and Display active 'channels' on the HIM
+- List and administer all 'system' users of the HIM (i.e. applications that have access to the HIM channels)
+- List and display the 'monitoring aspects' of the HIM:
+-- Number of messages per channel etc
 
-Pages:
+The interface is forked from a generic admin theme built with Bootstrap free for both personal and commercial use. 
+
+This is still a work in progress and will begin to focus itself on a Web ADMIN UI for the OpenHIM.
+
+Existing Pages to be used for referecne:
 
 - Login
 - Admin Dashboard (Tables, Statistics, Chart, Media Gallery)
@@ -17,11 +25,9 @@ Pages:
 - Tables & Bootstrap dataTables
 - UI & Interface Elements (Modals, Popovers, Tooltips, Alerts, Notifications, Labels, Progress Bars)
 
-Demo:
+The Working demo page:
+http://carlsbox.github.io/HIM-Admin-Theme-bootstrap/
 
-http://vinceg.github.com/Bootstrap-Admin-Theme
-
-<p>&copy; <a href='http://vadimg.com' target="_blank">Vadim Vincent Gabriel</a> <a href='https://twitter.com/gabrielva' target='_blank'>Follow @gabrielva</a> 2012</p>
 
 License
 ===============
