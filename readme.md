@@ -13,6 +13,48 @@ The interface is forked from a generic admin theme built with Bootstrap free for
 
 This is still a work in progress and will begin to focus itself on a Web ADMIN UI for the OpenHIM.
 
+HIM-Monitor App Site Map
+========================
+
+- Login
+- Home Page (index) - Dashboard
+- Channel List - List of all channels with links to channel details
+-- Channel Detail page
+-- Add / Remove / Edit Channel Page * 
+- System Users (PoCs) - list of all registered system users
+-- User Detail Pages
+-- Add / Remove / Edit User Page * 
+- Transaction Log
+-- Log per Channel
+-- Log per message type (Success / Error)
+--- Ability to edit messages **
+- Admin / Settings -- Area for admin users to administer the settings of the HIM Monitor App *
+-- Add Users / User Administration
+-- Edit Notification Settings
+- Profile
+-- User Profile
+-- Change password etc
+
+* Only accessable to Admin users
+** only available to HIM Maintenance Users
+
+
+HIM Monitor App User types
+==========================
+- Super User / Root
+-- Created manually and only one per systems
+-- All rights within the system
+- Admin
+-- Can create users | full user management
+-- full access to all system
+-- Create and maintain channels
+-- Create and maintain system users
+- Maintenance
+-- Access to monitoring dashboard and error consol
+-- can't add new users or systems or channels
+- System
+-- has rights to submit to the system
+
 Existing Pages to be used for referecne:
 
 - Login
