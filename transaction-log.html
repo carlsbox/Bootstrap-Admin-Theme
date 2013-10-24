@@ -2,11 +2,12 @@
 <html>
     
     <head>
-        <title>Statistics</title>
+        <title>Tables</title>
         <!-- Bootstrap -->
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
         <link href="assets/styles.css" rel="stylesheet" media="screen">
+        <link href="assets/DT_bootstrap.css" rel="stylesheet" media="screen">
         <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -75,7 +76,7 @@
             <div class="row-fluid">
                 <div class="span3" id="sidebar">
                     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
-                        <li class="active">
+                        <li >
                             <a href="index.html"><i class="icon-chevron-right"></i> Dashboard</a>
                         </li>
                         <li>
@@ -87,231 +88,339 @@
                         <li>
                             <a href="channel-stats.html"><i class="icon-chevron-right"></i> Channel Stats</a>
                         </li>
-                        <li>
-                            <a href="tables.html"><i class="icon-chevron-right"></i> Transaction Log</a>
+                        <li class="active">
+                            <a href="transaction-log.html"><i class="icon-chevron-right"></i> Transaction Log</a>
                         </li>
                     </ul>
                 </div>
                 <!--/span-->
                 <div class="span9" id="content">
-                      <!-- morris stacked chart -->
-                    <div class="row-fluid">
-                        <!-- block -->
-                        <div class="block">
-                            <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">HIM Message/Transaction Load</div>
-                                <div class="pull-right"><span class="badge badge-warning">View More</span>
 
-                                </div>
-                            </div>
-                            <div class="block-content collapse in">
-                                <div class="span12">
-                                    <div id="hero-area" style="height: 250px;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /block -->
-                    </div>
-
-                    <div class="row-fluid">
-                        <div class="span12">
-                            <!-- block -->
-                            <div class="block">
-                                <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Message Stats per Channel</div>
-                                    
-                                </div>
-                                <div class="block-content collapse in">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Channel Name</th>
-                                                <th>Message Count</th>
-                                                <th># Number of Passes / %</th>
-                                                <th># Number of Failures / %</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Client Registry</td>
-                                                <td>100</td>
-                                                <td>80 (80%)</td>
-                                                <td>20 (20%)</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Provider Registry</td>
-                                                <td>100</td>
-                                                <td>80 (80%)</td>
-                                                <td>20 (20%)</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Facility Registry</td>
-                                                <td>100</td>
-                                                <td>80 (80%)</td>
-                                                <td>20 (20%)</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Terminology Service</td>
-                                                <td>100</td>
-                                                <td>80 (80%)</td>
-                                                <td>20 (20%)</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Shared Health Record</td>
-                                                <td>100</td>
-                                                <td>80 (80%)</td>
-                                                <td>20 (20%)</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <!-- /block -->
-                        </div>
-                        
-                    </div>
-
-                    <!-- morris graph chart -->
+                <!-- morris bar & donut charts -->
                     <div class="row-fluid section">
                          <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Morris.js <small>Monthly growth</small></div>
+                                <div class="muted pull-left">Transactions Overview</div>
                                 <div class="pull-right"><span class="badge badge-warning">View More</span>
 
                                 </div>
                             </div>
                             <div class="block-content collapse in">
-                                <div class="span12">
-                                    <div id="hero-graph" style="height: 230px;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /block -->
-                    </div>
-
-                    <!-- morris bar & donut charts -->
-                    <div class="row-fluid section">
-                         <!-- block -->
-                        <div class="block">
-                            <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Morris.js</div>
-                                <div class="pull-right"><span class="badge badge-warning">View More</span>
-
-                                </div>
-                            </div>
-                            <div class="block-content collapse in">
-                                <div class="span6 chart">
-                                    <h5>Devices sold</h5>
-                                    <div id="hero-bar" style="height: 250px;"></div>
-                                </div>
                                 <div class="span5 chart">
                                     <h5>Month traffic</h5>
                                     <div id="hero-donut" style="height: 250px;"></div>    
                                 </div>
+                                <div class="span6 chart">
+                                    <h5>Devices sold</h5>
+                                    <div id="hero-bar" style="height: 250px;"></div>
+                                </div>
+                                
                             </div>
                         </div>
                         <!-- /block -->
                     </div>
 
-                    <!-- jQuery knobs -->
-                    <div class="row-fluid section">
-                         <!-- block -->
-                        <div class="block">
-                            <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">jQuery Knob</div>
-                                <div class="pull-right"><span class="badge badge-warning">View More</span>
-
-                                </div>
-                            </div>
-                            <div class="block-content collapse in">
-                                <div class="span3">     
-                                    <input type="text" value="50" class="knob second" data-thickness=".3" data-inputColor="#333" data-fgColor="#30a1ec" data-bgColor="#d4ecfd" data-width="140">
-                                </div>
-                                <div class="span3">
-                                    <input type="text" value="75" class="knob second" data-thickness=".3" data-inputColor="#333" data-fgColor="#8ac368" data-bgColor="#c4e9aa" data-width="140">
-                                </div>
-                                <div class="span3">
-                                    <input type="text" value="35" class="knob second" data-thickness=".3" data-inputColor="#333" data-fgColor="#5ba0a3" data-bgColor="#cef3f5" data-width="140">
-                                </div>
-                                <div class="span3">
-                                    <input type="text" value="85" class="knob second" data-thickness=".3" data-inputColor="#333" data-fgColor="#b85e80" data-bgColor="#f8d2e0" data-width="140">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /block -->
-                    </div>
-
-
-                    <div class="row-fluid">
+                     <div class="row-fluid">
                         <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Bar Chart</div>
-                                <div class="pull-right"><span class="badge badge-warning">View More</span>
-
-                                </div>
+                                <div class="muted pull-left">Transaction Log</div>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                                    <div id="catchart" style="width:100%;height:300px"></div>
+  									<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+										<thead>
+											<tr>
+												<th>ID</th>
+												<th>Endpoint</th>
+												<th>Processing Status</th>
+												<th>Response Status</th>
+												<th>Recieved Timestamp</th>
+                                                <th>Reviewed</th>
+                                                <th>Flagged</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="info">
+												<td>123</td>
+												<td><a href="#">POST dev/api/dataValueSets</a></td>
+												<td>Processing</td>
+												<td class="center"></td>
+												<td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+											</tr>
+											<tr class="success">
+												<td>134</td>
+												<td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+											</tr>
+											<tr class="success">
+												<td>145</td>
+												<td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+											</tr>
+											<tr class="error">
+												<td>156</td>
+												<td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Error</td>
+                                                <td class="center">401</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+											</tr>
+											<tr class="success">
+												<td>167</td>
+												<td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+											</tr>
+                                            <tr class="info">
+                                                <td>223</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Processing</td>
+                                                <td class="center"></td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>234</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>245</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="error">
+                                                <td>256</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Error</td>
+                                                <td class="center">401</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>267</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="info">
+                                                <td>323</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Processing</td>
+                                                <td class="center"></td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>334</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>345</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="error">
+                                                <td>356</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Error</td>
+                                                <td class="center">401</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>367</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="info">
+                                                <td>423</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Processing</td>
+                                                <td class="center"></td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>434</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>445</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="error">
+                                                <td>456</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Error</td>
+                                                <td class="center">401</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>467</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="info">
+                                                <td>523</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Processing</td>
+                                                <td class="center"></td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>534</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>545</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="error">
+                                                <td>556</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Error</td>
+                                                <td class="center">401</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>567</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="info">
+                                                <td>623</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Processing</td>
+                                                <td class="center"></td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>634</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>645</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="error">
+                                                <td>656</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Error</td>
+                                                <td class="center">401</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>667</td>
+                                                <td><a href="#">POST dev/api/dataValueSets</a></td>
+                                                <td>Completed</td>
+                                                <td class="center">200</td>
+                                                <td class="center">2013-10-24 10:06:54</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                            </tr>
+											
+										</tbody>
+									</table>
                                 </div>
                             </div>
                         </div>
                         <!-- /block -->
                     </div>
 
-                    <div class="row-fluid">
-                        <div class="span6">
-                            <!-- block -->
-                            <div class="block">
-                                <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Pie Chart</div>
-                                </div>
-                                <div class="block-content collapse in">
-                                    <div class="span12">
-                                       <div id="piechart1" style="width:100%;height:200px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /block -->
-                        </div>
-                        <div class="span6">
-                            <!-- block -->
-                            <div class="block">
-                                <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Pie Chart</div>
-                                </div>
-                                <div class="block-content collapse in">
-                                    <div class="span12">
-                                       <div id="piechart2" style="width:100%;height:200px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /block -->
-                        </div>
-                    </div>
-
-                    <div class="row-fluid">
-                        <!-- block -->
-                        <div class="block">
-                            <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Multiple axes</div>
-                            </div>
-                            <div class="block-content collapse in">
-                                <div class="span12">
-                                    <div id="timechart" style="width:100%;height:400px"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /block -->
-                    </div>
 
                 </div>
             </div>
@@ -321,6 +430,7 @@
             </footer>
         </div>
         <!--/.fluid-container-->
+
         <link rel="stylesheet" href="vendors/morris/morris.css">
 
 
@@ -338,6 +448,14 @@
         <script src="vendors/flot/jquery.flot.resize.js"></script>
 
         <script src="assets/scripts.js"></script>
+
+        <script src="vendors/jquery-1.9.1.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendors/datatables/js/jquery.dataTables.min.js"></script>
+
+
+        <script src="assets/scripts.js"></script>
+        <script src="assets/DT_bootstrap.js"></script>
         <script>
         $(function() {
             var data = [ ["January", 10], ["February", 8], ["March", 4], ["April", 13], ["May", 17], ["June", 9] ];
@@ -466,12 +584,11 @@
         Morris.Donut({
             element: 'hero-donut',
             data: [
-                {label: 'Direct', value: 25 },
-                {label: 'Referrals', value: 40 },
-                {label: 'Search engines', value: 25 },
-                {label: 'Unique visitors', value: 10 }
+                {label: 'Processing', value: 25 },
+                {label: 'Completed', value: 65 },
+                {label: 'Error', value: 10 },
             ],
-            colors: ["#30a1ec", "#76bdee", "#c4dafe"],
+            colors: ["#76bdee", "#47D147", "#FF4D4D"],
             formatter: function (y) { return y + "%" }
         });
 
