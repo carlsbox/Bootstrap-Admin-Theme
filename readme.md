@@ -1,3 +1,6 @@
+This branch is looking at taking designs and porting them to a Nodejs based app.
+
+
 OpenHIM Web-UI Admin Theme 
 ==========================
 
